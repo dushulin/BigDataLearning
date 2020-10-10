@@ -9,6 +9,7 @@ object RDD_memory {
     val conf = new SparkConf().setAppName("RDD_memory").setMaster("local[*]")
     val sc: SparkContext = new SparkContext(conf)
 
+    //创建rdd，可以从集合、文件、Hadoop支持的数据集（HDFS、HBase）
     val rdd: RDD[Int] = sc.makeRDD(List(1, 2, 3, 4))
     rdd.saveAsTextFile("output")
 
